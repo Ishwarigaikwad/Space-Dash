@@ -1,0 +1,117 @@
+/*
+Yellow rgb (255,169,36)  #FFA924
+LightBlue rgb (149,196,252)    #95C4FC
+Dark blue rgb (40,55,88)   #283758
+red rgb (250,35,33)    #FA2321
+*/
+
+* {
+  margin: 0;
+}
+
+p {
+  color: #283758;
+}
+
+#megaText {
+  padding-top: 400px;
+}
+
+#megaText h1 {
+  color: white;
+  font-size: 3rem;
+  text-align: center;
+}
+
+#megaText h2 {
+  text-align: center;
+  color: #ffa924;
+}
+
+#rangerBanner, #rangerCard, #userBtn, #btnCard {
+  background-color: #ffa924;
+}
+
+.videoWrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9  https://css-tricks.com/fluid-width-video */
+  height: 0;
+}
+
+.videoWrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#mapid { 
+  height: 400px; 
+}
+/*
+#intro {
+  height: 100vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/Assets/images/misc/iss-background.jpg);
+  background-position: center; 
+  background-repeat: no-repeat; 
+  padding-top: 72px;
+  padding-bottom: 100px;
+}
+*/
+
+#info, #videos, #map {
+  height: auto;
+  padding-top: 72px;
+  padding-bottom: 100px;
+}
+
+#info {
+  background-color:#283758;
+}
+
+#videos {
+  background-color: #95C4FC; /*fallback for image */
+ /* background-image: url(Assets/images/misc/iss-looking-at-earth.jpg);  */
+
+}
+
+#map {
+  background-color: #283758; /*fallback for image */
+ /* background-image: url(Assets/images/misc/stars.jpg); */
+}
+
+#map p {
+  font-size: 3rem;
+  font-family: 'Amatic SC', cursive;
+}
+
+#mapContainer {
+  background-color: #ffa924;
+}
+
+#userBtn h2 {
+  font-family: 'Amatic SC', cursive;
+  font-size: 2rem;
+}
+
+#videos article.ui.padded.segment  {
+  background-color: #283758;
+  
+}
+
+#videos article.ui.padded.segment p {
+  color: #95C4FC;
+}
+
+#iframes div.ui.center.aligned.segment {
+  background-color:#283758;
+}
+
+#map article.ui.red.segment {
+  background-color: #95C4FC;
+}
+
+#userInput > p {
+  color: white;
+}

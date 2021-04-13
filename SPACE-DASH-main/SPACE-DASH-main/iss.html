@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ISS-DASH</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin="" />
+  <!--Added Leaflet Js script here as per documentation-->
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" />
+
+  <!-- add icon link -->
+  <link rel="icon" href="Assets/images/logos/favicon.png" type="image/x-icon" />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,700;1,400;1,700&family=Rajdhani:wght@500;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,700;1,400;1,700&display=swap"
+    rel="stylesheet"/>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Open+Sans:ital,wght@0,300;0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,700;1,400;1,700&display=swap"
+    rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="Assets/CSS/style.css" />
+  <link rel="stylesheet" href="Assets/CSS/iss.css" />
+</head>
+
+<body>
+
+  <!--FIXED HEADER-->
+  <nav class="ui top fixed labeled icon mini menu aligned" id="menu">
+    <a class="item" href="index.html">
+      <i class="home icon"></i>Home
+    </a>
+    <a class="item" href="gallery.html">
+      <i class="image icon"></i>Gallery
+    </a>
+    <a class="item" href="asteroids.html">
+      <i class="star icon"></i>Asteroids
+    </a>
+    <a class="item active" href="iss.html">
+      <i class="space shuttle icon"></i>ISS
+    </a>
+    <a class="item" href="moon.html">
+      <i class="moon icon"></i>Moon
+    </a>
+  </nav>
+
+  <!--INTRO SECTION
+  <div class="infoSection" id="intro">
+    <div class="ui grid stackable container">
+      <div class="column" id="megaText">
+          <h1>Welcome to the ISS</h1>
+          <h2>Discover the wonders of space</h2>
+      </div>
+    </div>
+  </div>
+-->
+
+  <!--INFO SECTION-->
+  <section class="infoSection" id="info">
+    <div class="ui grid stackable container">
+      <div class="column">
+        <div class="ui segment" id="rangerBanner">
+          <h1>You've arrived to the International Space Station data control room <span class="personal issName"></span>
+          </h1>
+        </div>
+      </div>
+    </div>
+
+    <div class="ui grid stackable container">
+      <div>
+        <a class="item" href="#map">
+          <i class="map icon"></i>ISS Map
+        </a>
+        <a class="item" href="#videos">
+          <i class="video play icon"></i>Videos
+        </a>
+      </div>
+    </div>
+
+    <!--6 and 10 FLUID COLUMN ROW / CARD AND ISS INFO-->
+    <div class="ui grid stackable container">
+      <div class="six wide column">
+        <div class="ui segment" id="rangerCard">
+          <article class="ui centered card">
+            <div class="ui slide masked reveal image">
+              <img src="Assets/images/space-men/riding-a-rocket.png" alt="spaceman on a rocket logo" class="visible content" />
+              <img src="Assets/images/misc/iss.png" alt="international space station in orbit" class="hidden content" />
+            </div>
+            <div class="center aligned content">
+              <h2>Hey Space Ranger!</h2>
+            </div>
+          </article>
+        </div>
+      </div>
+      <div class="ten wide column">
+        <section class="ui red padded segment">
+          <h2>About the ISS</h2>
+          <p>The International Space Station is the biggest object ever flown in space. It travels around the Earth at
+            an average speed of 27,700 km/h, completing 16 orbits per day. At night it can easily be seen from Earth, as
+            it flies 320 kilometres above us. 16 countries, including the USA, Russia, Japan, Canada and many ESA member
+            states worked together to build the Station.</p>
+          <p>The largest part of the ISS is a central truss to which 16 huge solar panels are attached. The modules
+            where the astronauts live and work are attached to the centre of the truss. Europe’s biggest ISS project is
+            the Columbus science laboratory, where astronauts can carry out scientific experiments in weightless
+            conditions. Many different types of experiments can take place both inside and outside this space
+            laboratory.</p>
+          <p><em>Source: https://www.esa.int
+            </em></p>
+          </section>
+      </div>
+    </div>
+
+    <!--16 COLUMN ROW / COORDINATE BUTTON-->
+    <div class="ui grid stackable container">
+      <div class="column">
+        <div class="ui center aligned padded segment" id="btnCard">
+          <!-- button content error?  -->
+          <button id="userBtn" class=" big ui button">
+            <h2>Hey <span class="personal issName"></span>, How fast is the ISS travelling? Click the spaceship to find
+              out!</h2>
+            <i class="space shuttle icon"></i>
+            <div id="showData"></div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+<!--VIDEO SECTION-->
+<div class="videoSection" id="videos">
+  <!--16 COLUMN ROW / LIVE STREAM INTRO-->
+  <div class="ui grid stackable container">
+    <div class="column">
+      <article class="ui padded segment">
+        <h2>ISS Live Stream</h2>
+        <p>
+          <strong>Watch live footage of earth from space!</strong>
+        </p>
+        <p>During "loss of signal" periods, you will see a blue screen. Since the station orbits the Earth once every
+          90 minutes, it experiences a sunrise or a sunset about every 45 minutes. When the station is in darkness,
+          external camera video may appear black, but can sometimes provide spectacular views of lightning or city
+          lights below.</p>
+        </article>
+      </div>
+    </div>
+    <!--TWO 8 COLUMN ROW / EMBEDDED VIDEOS-->
+    <div class="ui grid stackable container" id="iframes">
+      <div class="eight wide column">
+        <div class="ui center aligned segment">
+          <div class="videoWrapper">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/DDU-rZs-Ic4" title="nasa live video feed of the international space station" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+      <div class="eight wide column">
+        <div class="ui center aligned segment">
+          <div class="videoWrapper">
+            <iframe width="560" height="315" src="https://ustream.tv/embed/9408562" title="live video feed showing views of earth from space" scrolling="no" allowfullscreen
+             frameborder="0" style="border: 0 none transparent;"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--MAP SECTION-->
+  <div class="dashbaordMap" id="map">
+    <!--16 COLUMN ROW / ISS DASHBOARD-->
+    <div class="ui grid stackable container">
+      <div class="column">
+        <article class="ui red segment">
+          <h2>Collecting live data...</h2>
+          <div class="ui yellow statistic">
+            <div class="value">
+              <p id="longitudeVal"></p>
+            </div>
+            <div class="label">Longitude</div>
+          </div>
+          <div class="ui yellow statistic">
+            <div class="value">
+              <p id="latitudeVal"></p>
+            </div>
+            <div class="label">Latitude</div>
+          </div>
+          <div class="ui yellow statistic">
+            <div class="value">
+              <p id="altitudeVal"></p>
+            </div>
+            <div class="label">Altitude</div>
+          </div>
+          <div class="ui yellow statistic">
+            <div class="value">
+              <p id="visitbiltyVal"></p>
+            </div>
+            <div class="label">Visibility</div>
+          </div>
+          <div class="ui yellow  statistic">
+            <div class="value">
+              <p id="footprintVal"></p>
+            </div>
+            <div class="label">Footprint</div>
+          </div>
+          <div class="ui yellow statistic">
+            <div class="value">
+              <p id="daynumVal"></p>
+            </div>
+            <div class="label">Daynum</div>
+          </div>
+          <div class="ui yellow statistic">
+            <div class="value">
+              <p id="sollatVal"></p>
+            </div>
+            <div class="label">Solar Latitude</div>
+          </div>
+          <div class="ui yellow statistic">
+            <div class="value">
+              <p id="sollongVal"></p>
+            </div>
+            <div class="label">Solar Longitude</div>
+          </div>
+          <div class="ui yellow statistic">
+            <div class="value">
+              <p id="velocityVal"></p>
+            </div>
+            <div class="label" data-tooltip="Velocity is the speed at which something is traveling"
+            data-position="bottom center">Velocity</div>
+          </div>
+          <div class="ui yellow statistic">
+            <div class="value">
+              <p id="countryVal"></p>
+            </div>
+            <div class="label">Place</div>
+          </div>
+        <article>
+      </div>
+    </div>
+    <div class="ui grid stackable container">
+      <div class="column">
+        <article class="ui padded blue segment" id="mapContainer">
+          <h2><span class="personal issName"></span> Where's the ISS At? Zoom in to take a closer look</h2>
+          <div id="mapid"></div>
+        </article>
+      </div>
+    </div>
+  </div>
+  <!-- footer -->
+  <footer>
+    © Copyright 2020
+  </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+  <script src="Assets/JS/iss.js"></script>
+</body>
+
+</html>

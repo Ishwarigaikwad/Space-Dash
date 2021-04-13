@@ -1,0 +1,47 @@
+/* Changes size of astonaut pic */
+#astronaut {
+  height: auto;
+  width: auto;
+}
+
+/* gives formatting to content box */
+#textContentGallery {
+  margin-bottom: 15px;
+  border: 5px solid;
+  border-color: #ffa924;
+  color: #283758;
+  background-color: #95c4fc;
+}
+
+/* style each image box */
+.picturesBoxes {
+  border: 5px solid;
+  border-color: #ffa924;
+  color: #283758;
+  background-color: #95c4fc;
+  border-radius: 15px;
+  height: 450px;
+  width: 100%;
+  
+}
+
+/* centres the heading text */
+h3 {
+  text-align: center;
+}
+
+/* styles images so they all look the same */
+#apolloImage,
+#moonImage,
+#sunImage,
+#galaxiesImage {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 250px;
+  width: auto;
+}
+
+
+
+

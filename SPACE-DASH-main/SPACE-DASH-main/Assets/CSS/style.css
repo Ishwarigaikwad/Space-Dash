@@ -1,0 +1,202 @@
+/* styling for everything */
+* {
+  box-sizing: border-box;
+}
+
+/* styling for body */
+body {
+  background-color: #283758;
+}
+
+/* styling for h1 and h2 only */
+h1,
+h2 {
+  font-family: "Bungee", cursive;
+  color: #283758;
+  background-color: #ffa924;
+  padding: 8px;
+  border-radius: 5px;
+}
+
+/* specific stylying for h3's */
+h3 {
+  margin: 14px 0;
+}
+
+/* styling for h3 and h4 only */
+h3,
+h4 {
+  font-family: "Amatic SC", cursive;
+  font-size: xx-large;
+}
+
+/* styling for all paragraphs, h5 and h6 */
+p,
+h5,
+h6 {
+  font-family: "Roboto", "Open Sans", sans-serif;
+  font-size: larger;
+}
+
+/* changes navbar background color */
+#menu {
+  background-color: #95c4fc;
+}
+
+/* changes navbar font color */
+#menu a {
+  color: #283758;
+}
+
+/* sets sizing for "container */
+div#wrapper {
+  padding-top: 72px;
+  margin-bottom: 14px;
+}
+
+/* styling added to semantic UI class */
+aside.div-back-bord, div.div-back-bord {
+  background-color: #124975;
+  border-radius: 5px;
+}
+
+/* styling for ranger rank box */
+div#ranger-rank-title {
+  margin: 0 0 14px 0;
+}
+
+/* styling for date and time boxes */
+p.date,
+p.time {
+  border: 5px solid #ffa924;
+  border-radius: 5px;
+  padding: 5px 5px;
+  background-color: #95c4fc;
+}
+
+/* styles buttons */
+.buttonStyle {
+  border: 5px solid;
+  border-color: #ffa924;
+}
+
+/* styling for main header box */
+.headerBox {
+  color: #283758;
+  background-color: #95c4fc;
+  border: 5px solid;
+  border-color: #ffa924;
+  border-radius: 5px;
+}
+
+/* centers image title */
+#picHeader {
+  text-align: center;
+}
+
+/* centers image shown in box */
+#potdIMG {
+  height: auto;
+  width: 72%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* changed background color on headertexts */
+#headerText div {
+    background-color:#FFA924;
+}
+
+/* changes background colour */
+#seg3 {
+    background-color:#124975;
+}
+    
+/* changes background colour */
+#seg4, #seg5, #seg6, #seg7 {
+    background-color:#95C4FC;
+}
+
+/* styles border */
+#seg4, #seg6 {
+    border: 5px #fa2321 solid;
+}
+ 
+/* styles border */
+#seg2, #seg3, #seg5, #seg7  {
+    border: 5px #FFA924 solid;
+}
+
+/* styles border */
+#seg6 {
+    border: 5px #124975 solid;
+}
+
+/* styles image in mission control */
+img#mission-control {
+    border: 5px solid #283758;
+    border-radius: 5px;
+    margin: 0 0 14px 0;
+}
+
+/* highlights persons name across all html's */
+span.personal {
+  color: #fa2321;
+}
+
+/* styling for inside mission control box */
+div.Near-earth-objects {
+    margin: 14px 0 0 10px ;
+}
+
+h2.Near-earth-objects {
+    font-size: 150%;
+}
+
+h3.Near-earth-objects {
+    color: white;
+    font-size: 400%;
+    text-align: center;
+}
+
+#seg2 p:last-child {
+  color:#283758;
+}
+
+/* overrides semantic UI styling for button */
+.ui.blue.button {
+  background-color:#95C4FC;
+  color: #283758;
+}
+
+/* styling of moon phase image */
+#imgNeil {
+  height: auto;
+  width: 445px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* styles footer */
+footer {
+    color: #283758;
+    background-color: #95C4FC;
+    text-align: center;
+    font-weight: bold;
+    padding: 10px;
+    border: 5px solid;
+    border-color:#95C4FC;
+}       
+
+/* adjusts for screens */
+@media screen and (max-width: 560px ){
+    div.Near-earth-objects {
+        margin: 14px 0 0 0px ;
+    }
+}
+
+@media screen and (min-width: 560px) and (max-width: 950px){
+
+}
